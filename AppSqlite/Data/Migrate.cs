@@ -2,6 +2,7 @@
 using SQLitePCL;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace AppSqlite.Data
 {
@@ -20,6 +21,7 @@ namespace AppSqlite.Data
         }
         public static bool CreateTables()
         {
+
             var conn = new SQLiteConnection("transaction.db");
             string sql = @"CREATE TABLE IF NOT EXISTS
                         PersonalTransaction (Id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
@@ -37,20 +39,10 @@ namespace AppSqlite.Data
             return true;
         }
 
-        public static bool DeleteData()
-        {
-            var conn = new SQLiteConnection("transaction.db");
-            var sqlInsert = "DELETE FROM PersonalTransaction;";
-
-            using (var pT = conn.Prepare(sqlInsert))
-            {
-                pT.Step();
-            }
-            return true;
-        }
-
         public static bool MigrationData()
         {
+            DropTable();
+            CreateTables();
             var conn = new SQLiteConnection("transaction.db");
             var sqlInsert = "INSERT INTO PersonalTransaction(Name, Description, Detail, Amount, CreatedDate, Category) VALUES"+
             "('Dai', 'Chuyen tien', 'Tien mua rau', 10000, '2022-1-10', 1)," +
@@ -104,6 +96,39 @@ namespace AppSqlite.Data
                     list.Add(personal);
                 }
                 return list;
+            }
+        }
+
+        public static List<Transaction> ListTransactionByStartDateAndEndDate(string startDate, string endDate)
+        {
+            
+            var list = new List<Transaction>();
+            try
+            {
+                SQLiteConnection cnn = new SQLiteConnection("transaction.db");
+                using (var stt = cnn.Prepare($"select * from Transaction where CreatedDate between '{startDate}' and '{endDate}'"))
+                {
+                    while (stt.Step() == SQLiteResult.ROW)
+                    {
+                        var personal = new Transaction()
+                        {
+                            Name = (string)stt["Name"],
+                            Detail = (string)stt["Detail"],
+                            Description = (string)stt["Description"],
+                            Amount = Convert.ToDouble(stt["Amount"]),
+                            CreatedDate = Convert.ToDateTime(stt["CreatedDate"]),
+                            Category = Convert.ToInt32(stt["Category"]),
+                        };
+                        list.Add(personal);
+                    }
+                }
+                //Debug.WriteLine(list[0]);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Co loi list" + ex);
+                return null;
             }
         }
     }

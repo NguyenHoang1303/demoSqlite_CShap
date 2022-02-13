@@ -8,11 +8,11 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <NavigationView x:Name="DemoTransaction" Loaded="DemoTransaction_Loaded" SelectionChanged="DemoTransaction_SelectionChanged">
+    <NavigationView x:Name="DemoTransaction" IsPaneOpen="False"  Loaded="DemoTransaction_Loaded" SelectionChanged="DemoTransaction_SelectionChanged">
         <NavigationView.MenuItems>
             <NavigationViewItem Icon="Play" Content="Transaction History" Tag="History" />
             <NavigationViewItem Icon="Save" Content="Create" Tag="Form" />
         </NavigationView.MenuItems>
-        <Frame x:Name="contentFrame"/>
+        <Frame x:Name="contentFrame" Navigated="contentFrame_Navigated"/>
     </NavigationView>
 </Page>

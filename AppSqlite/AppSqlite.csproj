@@ -120,6 +120,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\Migrate.cs" />
+    <Compile Include="Data\MigrateCategory.cs" />
+    <Compile Include="Entity\Category.cs" />
     <Compile Include="Entity\Transaction.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>

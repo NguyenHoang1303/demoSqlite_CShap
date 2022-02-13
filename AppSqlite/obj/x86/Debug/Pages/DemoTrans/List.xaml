@@ -8,8 +8,28 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <Custom:DataGrid x:ConnectionId='2' Margin="10,10,10,10" AutoGenerateColumns="True"                                 />
+    <Grid Margin="0,20,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="0" Grid.Column="0" Width="300" Height="60" Header="Name:" HorizontalAlignment="Center"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Width="300" Height="60" Header="Category:" HorizontalAlignment="Center"/>
+        <DatePicker  Grid.Row="1" Grid.Column="0" DayFormat="{}{day.integer}" MonthFormat="{}{month.integer}" YearFormat="{}{year.abbreviated}" Width="300" Height="60" Header="Start:" HorizontalAlignment="Center"  />
+        <DatePicker  Grid.Row="1" Grid.Column="1" DayFormat="{}{day.integer}" MonthFormat="{}{month.integer}" YearFormat="{}{year.abbreviated}" Width="300" Height="60" Header="End:" HorizontalAlignment="Center" />
+        <Button Grid.Column="3" Grid.Row="0" Width="97" Height="40" Content="Search" HorizontalAlignment="Center"/>
+        <Button x:ConnectionId='2' Grid.Column="3" Grid.Row="1" Width="97" Height="40" Content="MigateData" HorizontalAlignment="Center"                            />
+
+        <Custom:DataGrid x:ConnectionId='3' Grid.Row="2" Margin="10,30,10,10" AutoGenerateColumns="True"                                  Grid.ColumnSpan="4"/>
+
+
     </Grid>
 </Page>
 

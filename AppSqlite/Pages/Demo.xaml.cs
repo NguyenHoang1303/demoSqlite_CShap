@@ -14,13 +14,7 @@ namespace AppSqlite.Pages
         public Demo()
         {
             this.InitializeComponent();
-            this.Loaded += Demo_Loaded1;
             contentFrame.Navigate(typeof(Pages.DemoTrans.List));
-        }
-
-        private void Demo_Loaded1(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-            var conn = new SQLiteConnection("transaction.db");
         }
 
         private void DemoTransaction_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
@@ -47,6 +41,11 @@ namespace AppSqlite.Pages
                         break;
                 }
             }
+        }
+
+        private void contentFrame_Navigated(object sender, Windows.UI.Xaml.Navigation.NavigationEventArgs e)
+        {
+
         }
     }
 }

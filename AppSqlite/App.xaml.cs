@@ -57,7 +57,6 @@ namespace AppSqlite
                     // configuring the new page by passing required information as a navigation
                     // parameter
                     
-                    Data.Migrate.CreateTables();
                     rootFrame.Navigate(typeof(Pages.Demo), e.Arguments);
                 }
                 // Ensure the current window is active

@@ -8,12 +8,12 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <NavigationView x:ConnectionId='2' x:Name="DemoTransaction"                                                                                    >
+    <NavigationView x:ConnectionId='2' x:Name="DemoTransaction" IsPaneOpen="False"                                                                                     >
         <NavigationView.MenuItems>
             <NavigationViewItem Icon="Play" Content="Transaction History" Tag="History" />
             <NavigationViewItem Icon="Save" Content="Create" Tag="Form" />
         </NavigationView.MenuItems>
-        <Frame x:ConnectionId='3' x:Name="contentFrame"/>
+        <Frame x:ConnectionId='3' x:Name="contentFrame"                                   />
     </NavigationView>
 </Page>
 
