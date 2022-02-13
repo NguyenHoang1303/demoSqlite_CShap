@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\LaptopAZ.vn\source\repos\Sqlite_demo\Sqlite_demo\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>CF2B6D4B95EC86A156EB88705350DE086AB005D3DF47C7349A88B9ACB3F02359</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>5DD4F3E2535494E2568EC908FC686CA34A007C2E7678C7EAD31496846865366D</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>91a82252-921f-4a8c-b9bc-aba1635a70c9_1.0.0.0_x86__9bmxhb7zwesw4</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>91a82252-921f-4a8c-b9bc-aba1635a70c9_9bmxhb7zwesw4!App</RegisteredUserModeAppID>
     <RegisteredPackageID>91a82252-921f-4a8c-b9bc-aba1635a70c9</RegisteredPackageID>
@@ -30,13 +30,17 @@
     <AppXManifest Include="C:\Users\LaptopAZ.vn\source\repos\Sqlite_demo\Sqlite_demo\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-02-12T12:05:50.505</Modified>
+      <Modified>2022-02-13T11:11:51.835</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\LaptopAZ.vn\source\repos\Sqlite_demo\Sqlite_demo\bin\x86\Debug\Sqlite_demo.exe">
       <PackagePath>entrypoint\Sqlite_demo.exe</PackagePath>
-      <Modified>2022-02-12T12:05:49.626</Modified>
+      <Modified>2022-02-13T11:11:50.810</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\LaptopAZ.vn\.nuget\packages\microsoft.toolkit.uwp.ui.controls.datagrid\7.1.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.dll">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.dll</PackagePath>
+      <Modified>2021-11-18T22:29:32.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.12\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
@@ -57,6 +61,10 @@
     <AppxPackagedFile Include="C:\Users\LaptopAZ.vn\.nuget\packages\sqlitepcl\3.8.7.2\build\netcore451\SQLitePCL.Ext.dll">
       <PackagePath>SQLitePCL.Ext.dll</PackagePath>
       <Modified>2014-12-09T11:04:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\LaptopAZ.vn\.nuget\packages\microsoft.toolkit.uwp.ui.controls.datagrid\7.1.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.xr.xml">
+      <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.DataGrid\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.xr.xml</PackagePath>
+      <Modified>2021-11-18T21:54:12.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\LaptopAZ.vn\source\repos\Sqlite_demo\Sqlite_demo\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -98,23 +106,31 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\LaptopAZ.vn\source\repos\Sqlite_demo\Sqlite_demo\bin\x86\Debug\Sqlite_demo.xr.xml">
       <PackagePath>Sqlite_demo.xr.xml</PackagePath>
-      <Modified>2022-02-12T12:03:17.942</Modified>
+      <Modified>2022-02-13T11:11:50.719</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\LaptopAZ.vn\source\repos\Sqlite_demo\Sqlite_demo\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2022-02-12T12:03:17.950</Modified>
+      <Modified>2022-02-13T11:10:48.260</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\LaptopAZ.vn\source\repos\Sqlite_demo\Sqlite_demo\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2022-02-12T12:03:17.950</Modified>
+      <Modified>2022-02-13T11:10:48.260</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\LaptopAZ.vn\source\repos\Sqlite_demo\Sqlite_demo\bin\x86\Debug\Pages\FormTransaction.xbf">
-      <PackagePath>Pages\FormTransaction.xbf</PackagePath>
-      <Modified>2022-02-12T12:03:17.951</Modified>
+    <AppxPackagedFile Include="C:\Users\LaptopAZ.vn\source\repos\Sqlite_demo\Sqlite_demo\bin\x86\Debug\Pages\Demo.xbf">
+      <PackagePath>Pages\Demo.xbf</PackagePath>
+      <Modified>2022-02-13T11:11:50.732</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\LaptopAZ.vn\source\repos\Sqlite_demo\Sqlite_demo\bin\x86\Debug\Pages\ListTransaction.xbf">
-      <PackagePath>Pages\ListTransaction.xbf</PackagePath>
-      <Modified>2022-02-12T12:05:49.492</Modified>
+    <AppxPackagedFile Include="C:\Users\LaptopAZ.vn\source\repos\Sqlite_demo\Sqlite_demo\bin\x86\Debug\Pages\Transaction\FormTransaction.xbf">
+      <PackagePath>Pages\Transaction\FormTransaction.xbf</PackagePath>
+      <Modified>2022-02-13T11:10:48.261</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\LaptopAZ.vn\source\repos\Sqlite_demo\Sqlite_demo\bin\x86\Debug\Pages\Transaction\ListTransaction.xbf">
+      <PackagePath>Pages\Transaction\ListTransaction.xbf</PackagePath>
+      <Modified>2022-02-13T11:10:48.261</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\\redist\Debug\x86\ucrtbased.dll">
+      <PackagePath>ucrtbased.dll</PackagePath>
+      <Modified>2020-12-01T21:59:30.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -122,14 +138,63 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\LaptopAZ.vn\source\repos\Sqlite_demo\Sqlite_demo\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2022-02-12T11:44:14.433</Modified>
+      <Modified>2022-02-13T11:11:50.943</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\LaptopAZ.vn\source\repos\Sqlite_demo\Sqlite_demo\bin\x86\Debug\Core\Sqlite_demo.exe">
       <PackagePath>Sqlite_demo.exe</PackagePath>
-      <Modified>2022-02-12T12:05:50.500</Modified>
+      <Modified>2022-02-13T11:11:51.831</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\LaptopAZ.vn\.nuget\packages\microsoft.ui.xaml\2.7.0\buildTransitive\..\lib\uap10.0\Microsoft.UI.Xaml.winmd">
+      <PackagePath>Microsoft.UI.Xaml.winmd</PackagePath>
+      <Modified>2021-09-14T09:06:08.000</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
+    <ResolvedSDKReference Include="C:\Users\LaptopAZ.vn\.nuget\packages\microsoft.ui.xaml\2.7.0\buildTransitive\..\tools\AppX\x86\Release\Microsoft.UI.Xaml.2.7.appx">
+      <Name>Microsoft.UI.Xaml.2.7</Name>
+      <Version>7.2109.13004.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.UI.Xaml.2.7, MinVersion = 7.2109.13004.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\LaptopAZ.vn\.nuget\packages\microsoft.ui.xaml\2.7.0\buildTransitive\..\tools\AppX\x86\Release\Microsoft.UI.Xaml.2.7.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\LaptopAZ.vn\.nuget\packages\microsoft.ui.xaml\2.7.0\buildTransitive\..\tools\AppX\x86\Release\Microsoft.UI.Xaml.2.7.appx">
+      <Name>Microsoft.UI.Xaml.2.7</Name>
+      <Version>7.2109.13004.0</Version>
+      <Architecture>Win32</Architecture>
+      <FrameworkIdentity>Name = Microsoft.UI.Xaml.2.7, MinVersion = 7.2109.13004.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\LaptopAZ.vn\.nuget\packages\microsoft.ui.xaml\2.7.0\buildTransitive\..\tools\AppX\x86\Release\Microsoft.UI.Xaml.2.7.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\LaptopAZ.vn\.nuget\packages\microsoft.ui.xaml\2.7.0\buildTransitive\..\tools\AppX\x64\Release\Microsoft.UI.Xaml.2.7.appx">
+      <Name>Microsoft.UI.Xaml.2.7</Name>
+      <Version>7.2109.13004.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.UI.Xaml.2.7, MinVersion = 7.2109.13004.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\LaptopAZ.vn\.nuget\packages\microsoft.ui.xaml\2.7.0\buildTransitive\..\tools\AppX\x64\Release\Microsoft.UI.Xaml.2.7.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\LaptopAZ.vn\.nuget\packages\microsoft.ui.xaml\2.7.0\buildTransitive\..\tools\AppX\arm\Release\Microsoft.UI.Xaml.2.7.appx">
+      <Name>Microsoft.UI.Xaml.2.7</Name>
+      <Version>7.2109.13004.0</Version>
+      <Architecture>arm</Architecture>
+      <FrameworkIdentity>Name = Microsoft.UI.Xaml.2.7, MinVersion = 7.2109.13004.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\LaptopAZ.vn\.nuget\packages\microsoft.ui.xaml\2.7.0\buildTransitive\..\tools\AppX\arm\Release\Microsoft.UI.Xaml.2.7.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Users\LaptopAZ.vn\.nuget\packages\microsoft.ui.xaml\2.7.0\buildTransitive\..\tools\AppX\arm64\Release\Microsoft.UI.Xaml.2.7.appx">
+      <Name>Microsoft.UI.Xaml.2.7</Name>
+      <Version>7.2109.13004.0</Version>
+      <Architecture>arm64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.UI.Xaml.2.7, MinVersion = 7.2109.13004.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Users\LaptopAZ.vn\.nuget\packages\microsoft.ui.xaml\2.7.0\buildTransitive\..\tools\AppX\arm64\Release\Microsoft.UI.Xaml.2.7.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
     <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.net.uwpcoreruntimesdk\2.2.12\build\..\tools\Appx\Microsoft.NET.CoreRuntime.2.2.appx">
       <Name>Microsoft.NET.CoreRuntime.2.2</Name>
       <Version>2.2.29713.2</Version>

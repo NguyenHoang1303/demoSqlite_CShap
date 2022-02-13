@@ -10,7 +10,8 @@ Assets\StoreLogo.png
 Assets\Wide310x150Logo.scale-200.png
 App.xbf
 MainPage.xbf
-Pages\FormTransaction.xbf
-Pages\ListTransaction.xbf
+Pages\Demo.xbf
+Pages\Transaction\FormTransaction.xbf
+Pages\Transaction\ListTransaction.xbf
 Sqlite_demo.xr.xml
 Properties\Default.rd.xml

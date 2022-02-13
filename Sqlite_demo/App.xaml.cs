@@ -67,7 +67,7 @@ namespace Sqlite_demo
                     // configuring the new page by passing required information as a navigation
                     // parameter
                     Data.MigrateData.CreateTables();
-                    rootFrame.Navigate(typeof(Pages.ListTransaction), e.Arguments);
+                    rootFrame.Navigate(typeof(Pages.Demo), e.Arguments);
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();

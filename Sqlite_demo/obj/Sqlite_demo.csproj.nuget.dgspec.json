@@ -43,6 +43,14 @@
               "target": "Package",
               "version": "[6.2.12, )"
             },
+            "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid": {
+              "target": "Package",
+              "version": "[7.1.2, )"
+            },
+            "Microsoft.UI.Xaml": {
+              "target": "Package",
+              "version": "[2.7.0, )"
+            },
             "SQLite": {
               "target": "Package",
               "version": "[3.13.0, )"

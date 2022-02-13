@@ -11,10 +11,20 @@
       <RootProperty Name="Children" />
     </RootType>
     <RootType FullName="Sqlite_demo.MainPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.NavigationView">
+      <RootProperty Name="IsPaneOpen" />
+      <RootProperty Name="MenuItems" />
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.NavigationViewItem">
+      <RootProperty Name="Content" />
+      <RootProperty Name="Tag" />
+      <RootEvent Name="Tapped" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Frame" />
+    <RootType FullName="Sqlite_demo.Pages.Demo" />
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Children" />
-      <RootProperty Name="Name" />
-      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="HorizontalAlignment" />
@@ -49,6 +59,7 @@
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Sqlite_demo.Pages.FormTransaction" />
+    <RootType FullName="Microsoft.Toolkit.Uwp.UI.Controls.DataGrid" />
     <RootType FullName="Sqlite_demo.Pages.ListTransaction" />
   </Roots.RootTypes>
 </Roots>
