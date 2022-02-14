@@ -1,4 +1,5 @@
-﻿using SQLitePCL;
+﻿using AppSqlite.Entity;
+using SQLitePCL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,26 @@ namespace AppSqlite.Data
             {
              
                 create.Step();
+            }
+        }
+
+        public static List<Category> findAll()
+        {
+            List<Category> list = new List<Category>();
+            var conn = new SQLiteConnection("transaction.db");
+            using (var cate = conn.Prepare("select * from Category"))
+            {
+
+                while (cate.Step() == SQLiteResult.ROW)
+                {
+                    Category categry = new Category()
+                    {
+                        Name = (string)cate["Name"],
+                        Id = Convert.ToInt32(cate["Id"])
+                    };
+                    list.Add(categry);
+                }
+                return list;
             }
         }
     }

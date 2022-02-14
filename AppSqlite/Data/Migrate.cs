@@ -29,7 +29,7 @@ namespace AppSqlite.Data
                         Description TEXT,
                         Detail TEXT,
                         Amount DOUBLE,
-                        CreatedDate DATETIME,
+                        CreatedDate DATE,
                         Category INT
                         );";
             using (var statement = conn.Prepare(sql))
@@ -44,12 +44,12 @@ namespace AppSqlite.Data
             DropTable();
             CreateTables();
             var conn = new SQLiteConnection("transaction.db");
-            var sqlInsert = "INSERT INTO PersonalTransaction(Name, Description, Detail, Amount, CreatedDate, Category) VALUES"+
-            "('Dai', 'Chuyen tien', 'Tien mua rau', 10000, '2022-1-10', 1)," +
-            "('Vuong', 'Chuyen tien', 'Tien mua dien thoai', 5000000, '2022-1-11', 1)," +
-            "('Tho', 'Chuyen tien', 'Tien mua Laptop', 15000000, '2022-1-11', 1)," +
-            "('SpringHung', 'Chuyen tien', 'Tien qua mon', 5000000, '2022-1-12', 1);";
-       
+            var sqlInsert = "INSERT INTO PersonalTransaction(Name, Description, Detail, Amount, CreatedDate, Category) VALUES" +
+            "('Dai', 'Chuyen tien', 'Tien mua rau', 10000, '2022-01-10', 1)," +
+            "('Vuong', 'Chuyen tien', 'Tien mua dien thoai', 5000000, '2022-01-11', 1)," +
+            "('Tho', 'Chuyen tien', 'Tien mua Laptop', 15000000, '2022-01-11', 1)," +
+            "('SpringHung', 'Chuyen tien', 'Tien qua mon', 5000000, '2022-01-12', 1);";
+
             using (var pT = conn.Prepare(sqlInsert))
             {
                 pT.Step();
@@ -87,11 +87,10 @@ namespace AppSqlite.Data
                         Name = (string)personalTransaction["Name"],
                         Description = (string)personalTransaction["Description"],
                         Detail = (string)personalTransaction["Detail"],
-                        Amount = (double)personalTransaction["Amount"]
+                        Amount = (double)personalTransaction["Amount"],
+                        CreatedDate = Convert.ToDateTime(personalTransaction["CreatedDate"]),
                     };
-                    var date = (string)personalTransaction["CreatedDate"];
                     var category = (Int64)personalTransaction["Category"];
-                    personal.CreatedDate = DateTime.Parse(date);
                     personal.Category = (int)category;
                     list.Add(personal);
                 }
@@ -101,12 +100,13 @@ namespace AppSqlite.Data
 
         public static List<Transaction> ListTransactionByStartDateAndEndDate(string startDate, string endDate)
         {
-            
+
             var list = new List<Transaction>();
             try
             {
                 SQLiteConnection cnn = new SQLiteConnection("transaction.db");
-                using (var stt = cnn.Prepare($"select * from Transaction where CreatedDate between '{startDate}' and '{endDate}'"))
+                var sqlString = $"select * from PersonalTransaction where CreatedDate between '{startDate}' and '{endDate}'";
+                using (var stt = cnn.Prepare(sqlString))
                 {
                     while (stt.Step() == SQLiteResult.ROW)
                     {
@@ -119,6 +119,7 @@ namespace AppSqlite.Data
                             CreatedDate = Convert.ToDateTime(stt["CreatedDate"]),
                             Category = Convert.ToInt32(stt["Category"]),
                         };
+                       
                         list.Add(personal);
                     }
                 }
@@ -128,6 +129,70 @@ namespace AppSqlite.Data
             catch (Exception ex)
             {
                 Debug.WriteLine("Co loi list" + ex);
+                return null;
+            }
+        }
+
+        public static List<Transaction> getTransactionByCategory(int categoryId)
+        {
+            var list = new List<Transaction>();
+            try
+            {
+                SQLiteConnection cnn = new SQLiteConnection("transaction.db");
+                using (var stt = cnn.Prepare($"select * from PersonalTransaction where Category = {categoryId}"))
+                {
+                    while (stt.Step() == SQLiteResult.ROW)
+                    {
+                        var transaction = new Transaction()
+                        {
+                            Name = (string)stt["Name"],
+                            Detail = (string)stt["Detail"],
+                            Description = (string)stt["Description"],
+                            Amount = Convert.ToDouble(stt["Amount"]),
+                            CreatedDate = Convert.ToDateTime(stt["CreatedDate"]),
+                            Category = Convert.ToInt32(stt["Category"]),
+                        };
+                        list.Add(transaction);
+                    }
+                }
+                //Debug.WriteLine(list[0]);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Fail: " + ex);
+                return null;
+            }
+        }
+
+        public static List<Transaction> getTransactionByName(string name)
+        {
+            var list = new List<Transaction>();
+            try
+            {
+                SQLiteConnection cnn = new SQLiteConnection("transaction.db");
+                using (var stt = cnn.Prepare($"select * from PersonalTransaction where Name Like '%{name}%'"))
+                {
+                    while (stt.Step() == SQLiteResult.ROW)
+                    {
+                        var transaction = new Transaction()
+                        {
+                            Name = (string)stt["Name"],
+                            Detail = (string)stt["Detail"],
+                            Description = (string)stt["Description"],
+                            Amount = Convert.ToDouble(stt["Amount"]),
+                            CreatedDate = Convert.ToDateTime(stt["CreatedDate"]),
+                            Category = Convert.ToInt32(stt["Category"]),
+                        };
+                        list.Add(transaction);
+                    }
+                }
+                //Debug.WriteLine(list[0]);
+                return list;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Fail: " + ex);
                 return null;
             }
         }

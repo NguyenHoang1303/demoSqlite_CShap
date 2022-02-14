@@ -4,26 +4,71 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:AppSqlite.Pages.DemoTrans"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:entity="using:AppSqlite.Entity"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <StackPanel>
-            <TextBlock x:Name="txtDate"/>
-        </StackPanel>
-        <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="255,147,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"/>
-        <TextBlock HorizontalAlignment="Left" Margin="99,151,0,0" Text="Name" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Margin="255,206,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"/>
-        <TextBlock HorizontalAlignment="Left" Margin="99,210,0,0" Text="Description" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtDetail" HorizontalAlignment="Left" Margin="255,273,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"/>
-        <TextBlock HorizontalAlignment="Left" Margin="99,277,0,0" Text="Detail" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtMoney" HorizontalAlignment="Left" Margin="255,334,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"/>
-        <TextBlock HorizontalAlignment="Left" Margin="99,338,0,0" Text="Money" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="100,398,0,0" Text="Date" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtCategory" HorizontalAlignment="Left" Margin="256,461,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"/>
-        <TextBlock HorizontalAlignment="Left" Margin="100,465,0,0" Text="Categori" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <DatePicker SelectedDateChanged="CheckDate" DayFormat="{}{day.integer}" MonthFormat="{}{month.integer}" YearFormat="{}{year.abbreviated}" Name="Date" Margin="256,395,0,0" VerticalAlignment="Top" Width="248"/>
-        <Button Content="Save" Margin="99,524,0,0" VerticalAlignment="Top" Width="410" Click="Save"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" Grid.Column="1" Margin="0,100,0,30">
+            <TextBox x:Name="txtName" HorizontalAlignment="Right"  Width="300" />
+            <TextBlock HorizontalAlignment="Left"  Text="Name:" TextWrapping="Wrap" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="1" Margin="0,0,0,30">
+            <TextBox x:Name="txtDescription" HorizontalAlignment="Right"  Width="300" />
+            <TextBlock HorizontalAlignment="Left"  Text="Description:" TextWrapping="Wrap" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="1" Margin="0,0,0,30">
+            <TextBox x:Name="txtDetail" HorizontalAlignment="Right"  Width="300" />
+            <TextBlock HorizontalAlignment="Left"  Text="Detail:" TextWrapping="Wrap" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="4" Grid.Column="1" Margin="0,0,0,30">
+            <TextBox x:Name="txtMoney" HorizontalAlignment="Right"  Width="300" />
+            <TextBlock HorizontalAlignment="Left"  Text="Money:" TextWrapping="Wrap" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="5" Grid.Column="1" Margin="0,0,0,30">
+            <TextBlock HorizontalAlignment="Left"  Text="Category:" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <DropDownButton x:Name="searchCategory"  VerticalAlignment="Top"  Width="300" HorizontalAlignment="Right">
+                <!--<DropDownButton.Content>My Button</DropDownButton.Content>-->
+                <DropDownButton.Flyout>
+                    <Flyout Placement="Bottom">
+                        <ListView x:Name="listCategory" SelectionChanged="listViewCategory_SelectionChanged">
+                            <ListView.ItemTemplate>
+                                <DataTemplate x:DataType="entity:Category">
+                                    <TextBlock Text="{x:Bind Name}" Tag="{x:Bind Id}" Width="280"/>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Flyout>
+                </DropDownButton.Flyout>
+            </DropDownButton>
+        </Grid>
+        <Grid Grid.Row="6" Grid.Column="1" Margin="0,0,0,30">
+            <DatePicker x:Name="txtDate" SelectedDateChanged="CheckDate" DayFormat="{}{day.integer}" MonthFormat="{}{month.integer}" YearFormat="{}{year.abbreviated}" Width="301" HorizontalAlignment="Right"/>
+            <TextBlock HorizontalAlignment="Left"  Text="Date:" TextWrapping="Wrap" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="7" Grid.Column="1" Margin="0,0,0,30">
+            <Button Content="Save" Width="426" Click="Save" HorizontalAlignment="Center"/>
+        </Grid>
+
+
+
+
+
     </Grid>
 </Page>
